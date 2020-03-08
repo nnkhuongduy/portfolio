@@ -91,30 +91,149 @@ $(document).ready(function () {
   //Web development click event
   let onFrontendFull = $('.to-frontend-full');
   let onWebdesignFull = $('.to-webdesign-full');
+
+  let onFrontendShort = $('.to-frontend-short');
+  let onWebdesignShort = $('.to-webdesign-short');
+
+  let frontendFullNav = $('#to-frontend-full-nav');
+  let frontendShortNav = $('#to-frontend-short-nav');
+  let webdesignFullNav = $('#to-webdesign-full-nav');
+  let webdesignShortNav = $('#to-webdesign-short-nav');
+
   let frontendShort = $('.web-short');
   let webdesignShort = $('.design-short');
+
   let frontendFull = $('.web-full');
   let webdesignFull = $('.design-full');
+
   let centerLine = $('.center-line');
+
+  let arrowLeft = $('.arrow-left');
+  let arrowRight = $('.arrow-right');
+
+  let width = webdesignShort.width();;
+
+  //Make Frontend Full click event
   onFrontendFull.click(() => {
-    //Make the web design, frontend section dissapear
-    webdesignShort.addClass("dissapear");
-    frontendShort.addClass("dissapear");
+    //If Webdesign Full hasn't appeared
+    if (!webdesignFull.hasClass("appear")) {
+      //Make the web design, frontend section dissapear
+      webdesignShort.addClass("dissapear");
+      frontendShort.addClass("dissapear");
+
+    } else {
+      //If Webdesign Full has appeared
+
+      //Make the webdesign Full disspear
+      webdesignFull.removeClass("appear");
+
+      //Remove webdesign to-short functionality nav
+      webdesignShortNav.removeClass("appear");
+
+      //Restore to-full nav
+      webdesignFullNav.addClass("appear");
+
+      //Remove arrow
+      arrowRight.removeClass("appear");
+    }
+
 
     //Make the frontend full section appear
     frontendFull.addClass('appear');
 
-    //Hightlight the element
-    onFrontendFull.addClass("selected");
+    //Remove to-full nav
+    frontendFullNav.removeClass("appear");
 
-    //Remove to-full functionality
-    onFrontendFull.removeClass("to-frontend-full");
+    //Add to-short nav
+    frontendShortNav.addClass("appear");
 
     //Move the center line to the right
-    let width = webdesignShort.width();
     centerLine.css("left", `${width}px`);
-  });
-  onWebdesignFull.click(() => {
 
+    //Make arrow appear
+    arrowLeft.addClass("appear");
+  });
+
+  //Back to Frontend Short click event
+  onFrontendShort.click(() => {
+    //Make the web design, frontend section appear
+    webdesignShort.removeClass("dissapear");
+    frontendShort.removeClass("dissapear");
+
+    //Make the frontend full section dissapear
+    frontendFull.removeClass('appear');
+
+    //Restore to-full nav
+    frontendFullNav.addClass("appear");
+
+    //Add to-short nav
+    frontendShortNav.removeClass("appear");
+
+    //Move the center line back to the center
+    centerLine.css("left", `unset`);
+
+    //Make arrow dissappear
+    arrowLeft.removeClass("appear");
+  });
+
+  //Make webdesign Full click event
+  onWebdesignFull.click(() => {
+    //If Frontend Full hasn't appeared
+    if (!frontendFull.hasClass("appear")) {
+      //Make the web design, frontend section dissapear
+      frontendShort.addClass("dissapear");
+      webdesignShort.addClass("dissapear");
+
+    } else {
+      //If Frontend Full has appeared
+
+      //Make the Frontend Full disspear
+      frontendFull.removeClass("appear");
+
+      //Remove frontend to-short functionality nav
+      frontendShortNav.removeClass("appear");
+
+      //Restore to-full nav
+      frontendFullNav.addClass("appear");
+
+      //Remove arrow
+      arrowLeft.removeClass("appear");
+    }
+    //Move the center line to the right
+    centerLine.css("left", `-${width}px`);
+
+    //Make the webdesign full section appear
+    webdesignFull.addClass('appear');
+
+    //Remove to-full nav
+    webdesignFullNav.removeClass("appear");
+
+    //Add to-short nav
+    webdesignShortNav.addClass("appear");
+
+    //Make arrow appear
+    arrowRight.addClass("appear");
+  });
+
+  //Back to Webdesign Short click event
+  onWebdesignShort.click(() => {
+    //Make the web design, frontend section appear
+    webdesignShort.removeClass("dissapear");
+    frontendShort.removeClass("dissapear");
+
+    //Make the frontend full section dissapear
+    webdesignFull.removeClass('appear');
+
+    //Restore to-full nav
+    webdesignFullNav.addClass("appear");
+
+    //Add to-short nav
+    webdesignShortNav.removeClass("appear");
+
+    //Move the center line back to the center
+    centerLine.css("left", `unset`);
+
+    //Make arrow dissappear
+    arrowRight.removeClass("appear");
   });
 });

@@ -1,7 +1,7 @@
 $dark-blue: #0f4c75;
 $black-dark-blue: #1b262c;
 $dark-gray: #324047;
-$bright-blue: #3282b8;
+$bright-blue: rgb(50, 131, 184);
 $white-blue: #bbe1fa;
 $white: #fff;
 $body-pading: 16vw;
@@ -91,6 +91,7 @@ body {
     position: fixed;
     width: 100%;
     transition: all 0.25s ease-in-out;
+    z-index: 2;
 
     &.transparent {
       opacity: 0.5;
@@ -123,6 +124,10 @@ body {
             visibility: hidden;
             opacity: 0;
             right: -200px;
+          }
+
+          &.toggle {
+            background-color: $dark-blue;
           }
 
           .item {
@@ -164,7 +169,8 @@ body {
           }
 
           @keyframes bar1-to-arrow {
-            from {}
+            from {
+            }
 
             to {
               transform: rotate(-30deg) translate(4px, 1px);
@@ -179,7 +185,8 @@ body {
           }
 
           @keyframes bar3-to-arrow {
-            from {}
+            from {
+            }
 
             to {
               transform: rotate(30deg) translate(4px, -1px);
@@ -323,6 +330,11 @@ body {
   .service {
     text-align: center;
     margin: 300px auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .svg {
       display: none;
@@ -342,10 +354,15 @@ body {
           opacity: 0.5;
           transition: all 0.2s ease-in-out;
           position: relative;
-          display: inline-block;
           @include underline;
+          display: none;
 
-          &.selected {
+          &.appear {
+            display: inline-block;
+          }
+
+          &#to-frontend-short-nav,
+          &#to-webdesign-short-nav {
             opacity: 1;
           }
         }
@@ -362,7 +379,6 @@ body {
       .line {
         width: 1px;
       }
-
     }
 
     .content {
@@ -376,6 +392,7 @@ body {
         height: 100%;
         position: relative;
         left: 0;
+        right: 0;
         transition: all 0.2s ease-in-out;
       }
 
@@ -412,7 +429,6 @@ body {
         }
       }
 
-
       .dissapear {
         opacity: 0;
         visibility: hidden;
@@ -422,6 +438,46 @@ body {
         opacity: 1;
         visibility: visible;
         height: 100%;
+      }
+    }
+
+    .service-nav-full {
+      position: absolute;
+      //top: 55%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      height: 100%;
+
+      .arrow-left,
+      .arrow-right {
+        height: 50%;
+        position: relative;
+        top: 15%;
+        transition: all 0.2s ease-in-out;
+        visibility: hidden;
+        opacity: 0;
+
+        svg {
+          position: relative;
+          top: 50%;
+          transform: translate(0, -100%);
+        }
+
+        &:hover {
+          background-color: $item-hover-background-color;
+          cursor: pointer;
+        }
+
+        &.appear {
+          visibility: visible;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
   }
@@ -495,8 +551,10 @@ body {
             position: absolute;
             height: 400px;
             width: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0) 0%,
-                rgba(0, 0, 0, 0.8) 100%);
+            background: linear-gradient(
+              rgba(0, 0, 0, 0) 0%,
+              rgba(0, 0, 0, 0.8) 100%
+            );
             transition: all 0.2s ease-in-out;
           }
 
@@ -577,8 +635,6 @@ body {
               color: $white;
             }
           }
-
-
         }
       }
     }

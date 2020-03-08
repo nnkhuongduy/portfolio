@@ -22,7 +22,7 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: #3282b8;
+  background-color: #3283b8;
   color: #fff;
 }
 
@@ -66,6 +66,7 @@ body .nav {
   width: 100%;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+  z-index: 2;
 }
 
 body .nav.transparent {
@@ -121,6 +122,10 @@ body .nav .nav-content .nav-bar .nav-bar-container.collapse-right {
   visibility: hidden;
   opacity: 0;
   right: -200px;
+}
+
+body .nav .nav-content .nav-bar .nav-bar-container.toggle {
+  background-color: #0f4c75;
 }
 
 body .nav .nav-content .nav-bar .nav-bar-container .item {
@@ -349,7 +354,7 @@ body .about {
 }
 
 body .about .about-me {
-  background-color: #3282b8;
+  background-color: #3283b8;
   width: 80%;
   height: 80%;
   -ms-flex-item-align: center;
@@ -423,6 +428,20 @@ body .about .background {
 body .service {
   text-align: center;
   margin: 300px auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 body .service .svg {
@@ -451,7 +470,7 @@ body .service .service-nav .item p {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   position: relative;
-  display: inline-block;
+  display: none;
 }
 
 body .service .service-nav .item p:after {
@@ -476,7 +495,11 @@ body .service .service-nav .item p:hover:after {
   width: 100%;
 }
 
-body .service .service-nav .item p.selected {
+body .service .service-nav .item p.appear {
+  display: inline-block;
+}
+
+body .service .service-nav .item p#to-frontend-short-nav, body .service .service-nav .item p#to-webdesign-short-nav {
   opacity: 1;
 }
 
@@ -506,6 +529,7 @@ body .service .content .center-line {
   height: 100%;
   position: relative;
   left: 0;
+  right: 0;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
@@ -563,6 +587,57 @@ body .service .content .appear {
   opacity: 1;
   visibility: visible;
   height: 100%;
+}
+
+body .service .service-nav-full {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  height: 100%;
+}
+
+body .service .service-nav-full .arrow-left,
+body .service .service-nav-full .arrow-right {
+  height: 50%;
+  position: relative;
+  top: 15%;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+body .service .service-nav-full .arrow-left svg,
+body .service .service-nav-full .arrow-right svg {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+}
+
+body .service .service-nav-full .arrow-left:hover,
+body .service .service-nav-full .arrow-right:hover {
+  background-color: rgba(80, 80, 80, 0.5);
+  cursor: pointer;
+}
+
+body .service .service-nav-full .arrow-left.appear,
+body .service .service-nav-full .arrow-right.appear {
+  visibility: visible;
+  opacity: 0.5;
+}
+
+body .service .service-nav-full .arrow-left.appear:hover,
+body .service .service-nav-full .arrow-right.appear:hover {
+  opacity: 1;
 }
 
 body .works .svg {
@@ -743,7 +818,7 @@ body .footer .footer-container .svg {
 }
 
 body .footer .contact {
-  background-color: #3282b8;
+  background-color: #3283b8;
   width: 50%;
 }
 
