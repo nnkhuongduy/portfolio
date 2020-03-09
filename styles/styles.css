@@ -66,7 +66,7 @@ body .nav {
   width: 100%;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-  z-index: 2;
+  z-index: 1;
 }
 
 body .nav.transparent {
@@ -607,6 +607,7 @@ body .service .service-nav-full {
 body .service .service-nav-full .arrow-left,
 body .service .service-nav-full .arrow-right {
   height: 50%;
+  width: 5%;
   position: relative;
   top: 15%;
   -webkit-transition: all 0.2s ease-in-out;
@@ -664,9 +665,9 @@ body .works .works-container .border {
 body .works .works-container .works-nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: max-content 1px max-content;
-      grid-template-columns: -webkit-max-content 1px -webkit-max-content;
-      grid-template-columns: max-content 1px max-content;
+  -ms-grid-columns: max-content (1px max-content)[3];
+      grid-template-columns: -webkit-max-content repeat(3, 1px -webkit-max-content);
+      grid-template-columns: max-content repeat(3, 1px max-content);
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -732,6 +733,11 @@ body .works .works-container .works-content {
 
 body .works .works-container .works-content .sample {
   position: relative;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  display: none;
+  width: 100%;
+  height: 100%;
 }
 
 body .works .works-container .works-content .sample:hover .gradient {
@@ -743,10 +749,18 @@ body .works .works-container .works-content .sample:hover p {
   opacity: 1;
 }
 
+body .works .works-container .works-content .sample.appear {
+  display: block;
+}
+
+body .works .works-container .works-content .sample.fadeout {
+  opacity: 0;
+}
+
 body .works .works-container .works-content .sample .gradient {
   opacity: 0;
   position: absolute;
-  height: 400px;
+  height: 100%;
   width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
   background: linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
@@ -757,8 +771,8 @@ body .works .works-container .works-content .sample .gradient {
 body .works .works-container .works-content .sample img {
   position: relative;
   z-index: -1;
-  width: 260px;
-  height: 400px;
+  width: 100%;
+  height: 100%;
 }
 
 body .works .works-container .works-content .sample p {

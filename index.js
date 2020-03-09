@@ -38,6 +38,8 @@ $(document).ready(function () {
     }
   });
 
+
+  //--------------------------------------------------------------------------------------------------------------
   //Hamburger Menu
   hamburger.click(() => {
     //Nav-bar collapse
@@ -87,6 +89,7 @@ $(document).ready(function () {
     })
   })
 
+  //--------------------------------------------------------------------------------------------------------------
   //Services click events
   //Web development click event
   let onFrontendFull = $('.to-frontend-full');
@@ -110,8 +113,6 @@ $(document).ready(function () {
 
   let arrowLeft = $('.arrow-left');
   let arrowRight = $('.arrow-right');
-
-  let width = webdesignShort.width();;
 
   //Make Frontend Full click event
   onFrontendFull.click(() => {
@@ -148,6 +149,7 @@ $(document).ready(function () {
     frontendShortNav.addClass("appear");
 
     //Move the center line to the right
+    let width = webdesignShort.width();
     centerLine.css("left", `${width}px`);
 
     //Make arrow appear
@@ -200,6 +202,7 @@ $(document).ready(function () {
       arrowLeft.removeClass("appear");
     }
     //Move the center line to the right
+    let width = webdesignShort.width();
     centerLine.css("left", `-${width}px`);
 
     //Make the webdesign full section appear
@@ -236,4 +239,58 @@ $(document).ready(function () {
     //Make arrow dissappear
     arrowRight.removeClass("appear");
   });
+
+  //--------------------------------------------------------------------------------------------------------------
+  //Works section functionality
+  //Set up vars;
+  let samplesAll = $('.sample');
+  let samplesPersonal = $('.personal-projects');
+  let samplesFreelance = $('.freelance-projects');
+  let samplesFrontendMentor = $('.frontend-mentor-projects');
+
+  let navAll = $('#worksNavAll');
+  let navPersonal = $('#worksNavPersonal');
+  let navFreelance = $('#worksNavFreelance');
+  let navFrontendMentor = $('#worksNavFrontendMentor');
+
+  let worksDissapearClass = 'appear';
+
+  let navButtons = [navAll, navFreelance, navFrontendMentor, navPersonal];
+
+  let sampleObject = {
+    'worksNavAll': samplesAll,
+    'worksNavPersonal': samplesPersonal,
+    'worksNavFreelance': samplesFreelance,
+    'worksNavFrontendMentor': samplesFrontendMentor
+  }
+
+  //Add click event to all the works nav buttons
+  navButtons.forEach(element => {
+    element.click(() => {
+      //Get the current button id
+      elementId = element.attr('id');
+
+      //Get all the sample associated with the button
+      samplesArray = sampleObject[elementId];
+
+      //Make all the sample currently appear dissapear
+      samplesAll.removeClass(worksDissapearClass);
+
+      //Make all the corresponded sample appear
+      samplesArray.addClass(worksDissapearClass);
+
+      //Hightlight the nav button
+      //Get current hightlighted button
+      let currentHightlighted = $('.works-nav-selected');
+      //Unhightlight the button
+      currentHightlighted.removeClass("works-nav-selected");
+      //Hightlight the element button
+      element.addClass("works-nav-selected");
+
+
+    });
+  });
+
+  //Nav button ALL click on page load
+  navAll.click();
 });

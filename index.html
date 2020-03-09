@@ -71,11 +71,11 @@
     </div>
   </div>
   <div class="front">
-    <div class="video-container">
+    <!-- <div class="video-container">
       <video src="./media/videos/Aerial Shot Of City.mp4"></video>
       <video src="./media/videos/Pexels Videos 1395943.mp4"></video>
       <video src="./media/videos/video.mp4"></video>
-    </div>
+    </div> -->
     <h1>I'm <span>Khuong Duy</span></h1>
     <h2>Front-end Developer</h2>
     <h2>Web & UI/UX Designer</h2>
@@ -196,11 +196,6 @@
     </div>
   </div>
   <div class="service">
-    <div class="svg">
-      <svg width="1440" height="650" viewBox="0 0 1440 650" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0L1440 159V650L0 473.5V0Z" fill="#3282B8" fill-opacity="0.5" />
-      </svg>
-    </div>
     <div class="service-nav-full">
       <div class="arrow-left to-frontend-short">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -216,6 +211,11 @@
             fill="#BBE1FA" />
         </svg>
       </div>
+    </div>
+    <div class="svg">
+      <svg width="1440" height="650" viewBox="0 0 1440 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0L1440 159V650L0 473.5V0Z" fill="#3282B8" fill-opacity="0.5" />
+      </svg>
     </div>
     <div class="border">
       <h1>SERVICES</h1>
@@ -367,16 +367,24 @@
         <h1>MY WORKS</h1>
       </div>
       <div class="works-nav">
-        <div class="item works-nav-selected">
+        <div id="worksNavAll" class="item">
           <p>ALL</p>
         </div>
         <div class="line"></div>
-        <div class="item">
+        <div id="worksNavPersonal" class="item">
+          <p>Personal</p>
+        </div>
+        <div class="line"></div>
+        <div id="worksNavFreelance" class="item">
+          <p>Freelance</p>
+        </div>
+        <div class="line"></div>
+        <div id="worksNavFrontendMentor" class="item">
           <p>Frontend Mentor</p>
         </div>
       </div>
       <div class="works-content">
-        <div class="sample">
+        <div class="sample personal-projects frontend-mentor-projects">
           <div class="gradient">
           </div>
           <img
@@ -384,7 +392,7 @@
             alt="work sample">
           <p>This is a work sample.</p>
         </div>
-        <div class="sample">
+        <div class="sample personal-projects frontend-mentor-projects">
           <div class="gradient">
           </div>
           <img
@@ -392,7 +400,7 @@
             alt="work sample">
           <p>This is a work sample.</p>
         </div>
-        <div class="sample">
+        <div class="sample personal-projects frontend-mentor-projects">
           <div class="gradient">
           </div>
           <img
@@ -400,7 +408,7 @@
             alt="work sample">
           <p>This is a work sample.</p>
         </div>
-        <div class="sample">
+        <div class="sample freelance-projects">
           <div class="gradient">
           </div>
           <img
