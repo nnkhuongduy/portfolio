@@ -675,18 +675,18 @@ body .works .works-container .works-nav {
   margin: 30px 0;
 }
 
-body .works .works-container .works-nav .item {
+body .works .works-container .works-nav .work-nav-btn {
   padding: 5px 30px;
   opacity: 0.5;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 
-body .works .works-container .works-nav .item p {
+body .works .works-container .works-nav .work-nav-btn p {
   position: relative;
 }
 
-body .works .works-container .works-nav .item p:after {
+body .works .works-container .works-nav .work-nav-btn p:after {
   content: '';
   position: absolute;
   left: 0;
@@ -698,46 +698,47 @@ body .works .works-container .works-nav .item p:after {
   transition: width 0.5s;
 }
 
-body .works .works-container .works-nav .item p:hover {
+body .works .works-container .works-nav .work-nav-btn p:hover {
   cursor: pointer;
 }
 
-body .works .works-container .works-nav .item p:hover:after {
+body .works .works-container .works-nav .work-nav-btn p:hover:after {
   border: 1px solid black;
   border-color: #bbe1fa;
   width: 100%;
 }
 
-body .works .works-container .works-nav .item:hover {
+body .works .works-container .works-nav .work-nav-btn:hover {
   opacity: 1;
   background-color: rgba(80, 80, 80, 0.5);
 }
 
-body .works .works-container .works-nav .item.works-nav-selected {
+body .works .works-container .works-nav .work-nav-btn.works-nav-selected {
   opacity: 1;
 }
 
 body .works .works-container .works-content {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (260px)[auto-fit];
-      grid-template-columns: repeat(auto-fit, 260px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   text-align: center;
   -ms-flex-line-pack: center;
       align-content: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 body .works .works-container .works-content .sample {
   position: relative;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  display: none;
-  width: 100%;
-  height: 100%;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
 }
 
 body .works .works-container .works-content .sample:hover .gradient {
@@ -750,11 +751,13 @@ body .works .works-container .works-content .sample:hover p {
 }
 
 body .works .works-container .works-content .sample.appear {
-  display: block;
+  width: 260px;
+  height: 400px;
+  margin: 10px;
 }
 
-body .works .works-container .works-content .sample.fadeout {
-  opacity: 0;
+body .works .works-container .works-content .sample.fadein {
+  opacity: 1;
 }
 
 body .works .works-container .works-content .sample .gradient {

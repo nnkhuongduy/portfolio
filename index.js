@@ -243,54 +243,42 @@ $(document).ready(function () {
   //--------------------------------------------------------------------------------------------------------------
   //Works section functionality
   //Set up vars;
-  let samplesAll = $('.sample');
-  let samplesPersonal = $('.personal-projects');
-  let samplesFreelance = $('.freelance-projects');
-  let samplesFrontendMentor = $('.frontend-mentor-projects');
-
   let navAll = $('#worksNavAll');
   let navPersonal = $('#worksNavPersonal');
   let navFreelance = $('#worksNavFreelance');
   let navFrontendMentor = $('#worksNavFrontendMentor');
 
-  let worksDissapearClass = 'appear';
+  let worksAppearClass = 'appear';
 
   let navButtons = [navAll, navFreelance, navFrontendMentor, navPersonal];
 
   let sampleObject = {
-    'worksNavAll': samplesAll,
-    'worksNavPersonal': samplesPersonal,
-    'worksNavFreelance': samplesFreelance,
-    'worksNavFrontendMentor': samplesFrontendMentor
+    'worksNavAll': 'sample',
+    'worksNavPersonal': 'personal-projects',
+    'worksNavFreelance': 'freelance-projects',
+    'worksNavFrontendMentor': 'frontend-mentor-projects'
   }
 
   //Add click event to all the works nav buttons
   navButtons.forEach(element => {
-    element.click(() => {
-      //Get the current button id
-      elementId = element.attr('id');
+    element.on("click", e => {
+      //Get the current btn id
+      let navId = e.currentTarget.id;
 
-      //Get all the sample associated with the button
-      samplesArray = sampleObject[elementId];
+      //Get the associated class
+      let sampleClass = sampleObject[navId];
 
-      //Make all the sample currently appear dissapear
-      samplesAll.removeClass(worksDissapearClass);
+      //Get all sample with associated class
+      let samples = $(`.${sampleClass}`);
 
-      //Make all the corresponded sample appear
-      samplesArray.addClass(worksDissapearClass);
-
-      //Hightlight the nav button
-      //Get current hightlighted button
-      let currentHightlighted = $('.works-nav-selected');
-      //Unhightlight the button
-      currentHightlighted.removeClass("works-nav-selected");
-      //Hightlight the element button
-      element.addClass("works-nav-selected");
-
-
+      //Appear and fade in all the sample filtered
+      samples.addClass("appear");
+      setTimeout(() => {
+        samples.addClass("fadein");
+      }, 300);
     });
   });
 
   //Nav button ALL click on page load
-  navAll.click();
+  //navAll.click();
 });
