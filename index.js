@@ -10,7 +10,7 @@ $(document).ready(function () {
   $(window).scroll(function () {
     if ($(window).scrollTop() > 50) {
       //Hambuger menu appear
-      hamburger.addClass("appear");
+      hamburger.addClass("hamburger-appear");
 
       //Toggle-transaprent Navigation class
       if (!nav.hasClass("toggled-transparent")) nav.addClass("transparent");
@@ -20,7 +20,7 @@ $(document).ready(function () {
         navbar.addClass("collapse-right");
       }
     } else {
-      hamburger.removeClass("appear");
+      hamburger.removeClass("hamburger-appear");
 
       //Toggle-transaprent Navigation class
       if (nav.hasClass("transparent")) nav.removeClass("transparent");
@@ -114,130 +114,133 @@ $(document).ready(function () {
   let arrowLeft = $('.arrow-left');
   let arrowRight = $('.arrow-right');
 
+  let serviceNavAppearClass = 'service-appear';
+  let serviceNavDisappearClass = 'service-disappear';
+
   //Make Frontend Full click event
   onFrontendFull.click(() => {
     //If Webdesign Full hasn't appeared
-    if (!webdesignFull.hasClass("appear")) {
+    if (!webdesignFull.hasClass(serviceNavAppearClass)) {
       //Make the web design, frontend section dissapear
-      webdesignShort.addClass("dissapear");
-      frontendShort.addClass("dissapear");
+      webdesignShort.addClass(serviceNavDisappearClass);
+      frontendShort.addClass(serviceNavDisappearClass);
 
     } else {
       //If Webdesign Full has appeared
 
       //Make the webdesign Full disspear
-      webdesignFull.removeClass("appear");
+      webdesignFull.removeClass(serviceNavAppearClass);
 
       //Remove webdesign to-short functionality nav
-      webdesignShortNav.removeClass("appear");
+      webdesignShortNav.removeClass(serviceNavAppearClass);
 
       //Restore to-full nav
-      webdesignFullNav.addClass("appear");
+      webdesignFullNav.addClass(serviceNavAppearClass);
 
       //Remove arrow
-      arrowRight.removeClass("appear");
+      arrowRight.removeClass(serviceNavAppearClass);
     }
 
 
     //Make the frontend full section appear
-    frontendFull.addClass('appear');
+    frontendFull.addClass(serviceNavAppearClass);
 
     //Remove to-full nav
-    frontendFullNav.removeClass("appear");
+    frontendFullNav.removeClass(serviceNavAppearClass);
 
     //Add to-short nav
-    frontendShortNav.addClass("appear");
+    frontendShortNav.addClass(serviceNavAppearClass);
 
     //Move the center line to the right
     let width = webdesignShort.width();
     centerLine.css("left", `${width}px`);
 
     //Make arrow appear
-    arrowLeft.addClass("appear");
+    arrowLeft.addClass(serviceNavAppearClass);
   });
 
   //Back to Frontend Short click event
   onFrontendShort.click(() => {
     //Make the web design, frontend section appear
-    webdesignShort.removeClass("dissapear");
-    frontendShort.removeClass("dissapear");
+    webdesignShort.removeClass(serviceNavDisappearClass);
+    frontendShort.removeClass(serviceNavDisappearClass);
 
     //Make the frontend full section dissapear
-    frontendFull.removeClass('appear');
+    frontendFull.removeClass(serviceNavAppearClass);
 
     //Restore to-full nav
-    frontendFullNav.addClass("appear");
+    frontendFullNav.addClass(serviceNavAppearClass);
 
     //Add to-short nav
-    frontendShortNav.removeClass("appear");
+    frontendShortNav.removeClass(serviceNavAppearClass);
 
     //Move the center line back to the center
     centerLine.css("left", `unset`);
 
     //Make arrow dissappear
-    arrowLeft.removeClass("appear");
+    arrowLeft.removeClass(serviceNavAppearClass);
   });
 
   //Make webdesign Full click event
   onWebdesignFull.click(() => {
     //If Frontend Full hasn't appeared
-    if (!frontendFull.hasClass("appear")) {
+    if (!frontendFull.hasClass(serviceNavAppearClass)) {
       //Make the web design, frontend section dissapear
-      frontendShort.addClass("dissapear");
-      webdesignShort.addClass("dissapear");
+      frontendShort.addClass(serviceNavDisappearClass);
+      webdesignShort.addClass(serviceNavDisappearClass);
 
     } else {
       //If Frontend Full has appeared
 
       //Make the Frontend Full disspear
-      frontendFull.removeClass("appear");
+      frontendFull.removeClass(serviceNavAppearClass);
 
       //Remove frontend to-short functionality nav
-      frontendShortNav.removeClass("appear");
+      frontendShortNav.removeClass(serviceNavAppearClass);
 
       //Restore to-full nav
-      frontendFullNav.addClass("appear");
+      frontendFullNav.addClass(serviceNavAppearClass);
 
       //Remove arrow
-      arrowLeft.removeClass("appear");
+      arrowLeft.removeClass(serviceNavAppearClass);
     }
     //Move the center line to the right
     let width = webdesignShort.width();
     centerLine.css("left", `-${width}px`);
 
     //Make the webdesign full section appear
-    webdesignFull.addClass('appear');
+    webdesignFull.addClass(serviceNavAppearClass);
 
     //Remove to-full nav
-    webdesignFullNav.removeClass("appear");
+    webdesignFullNav.removeClass(serviceNavAppearClass);
 
     //Add to-short nav
-    webdesignShortNav.addClass("appear");
+    webdesignShortNav.addClass(serviceNavAppearClass);
 
     //Make arrow appear
-    arrowRight.addClass("appear");
+    arrowRight.addClass(serviceNavAppearClass);
   });
 
   //Back to Webdesign Short click event
   onWebdesignShort.click(() => {
     //Make the web design, frontend section appear
-    webdesignShort.removeClass("dissapear");
-    frontendShort.removeClass("dissapear");
+    webdesignShort.removeClass(serviceNavDisappearClass);
+    frontendShort.removeClass(serviceNavDisappearClass);
 
     //Make the frontend full section dissapear
-    webdesignFull.removeClass('appear');
+    webdesignFull.removeClass(serviceNavAppearClass);
 
     //Restore to-full nav
-    webdesignFullNav.addClass("appear");
+    webdesignFullNav.addClass(serviceNavAppearClass);
 
     //Add to-short nav
-    webdesignShortNav.removeClass("appear");
+    webdesignShortNav.removeClass(serviceNavAppearClass);
 
     //Move the center line back to the center
     centerLine.css("left", `unset`);
 
     //Make arrow dissappear
-    arrowRight.removeClass("appear");
+    arrowRight.removeClass(serviceNavAppearClass);
   });
 
   //--------------------------------------------------------------------------------------------------------------
@@ -247,8 +250,6 @@ $(document).ready(function () {
   let navPersonal = $('#worksNavPersonal');
   let navFreelance = $('#worksNavFreelance');
   let navFrontendMentor = $('#worksNavFrontendMentor');
-
-  let worksAppearClass = 'appear';
 
   let navButtons = [navAll, navFreelance, navFrontendMentor, navPersonal];
 
@@ -271,14 +272,60 @@ $(document).ready(function () {
       //Get all sample with associated class
       let samples = $(`.${sampleClass}`);
 
-      //Appear and fade in all the sample filtered
-      samples.addClass("appear");
+      //Get all the filtered out samples
+      let samplesFilteredOut = $('.appear').not(`.${sampleClass}`);
+      samplesFilteredOut.removeClass("fadein");
       setTimeout(() => {
-        samples.addClass("fadein");
-      }, 300);
+        samplesFilteredOut.removeClass("appear");
+      }, 400);
+
+      setTimeout(() => {
+        //Appear and fade in all the sample filtered
+        samples.addClass("appear");
+        setTimeout(() => {
+          samples.addClass("fadein");
+        }, 400);
+      }, 200);
+
+      //Unhighlight the previous selected button
+      $('.works-nav-selected').removeClass('works-nav-selected');
+      $(`#${navId}`).addClass('works-nav-selected');
     });
   });
 
   //Nav button ALL click on page load
-  //navAll.click();
+  navAll.click();
+
+  //Scroll event handle
+  //Scroll function
+  const scrollFunction = (idString) => {
+    $('html, body').animate({ scrollTop: $(`.${idString}`).offset().top }, 100, 'easeInOutQuint');
+  }
+  //Navbutton and Brand event
+  $('.scroll-event').on("click", (e) => {
+    let btnId = $(e.currentTarget).attr("id").replace("Scroll", "");
+    scrollFunction(btnId);
+  });
+  //Brand event
+  $('.brand').on("click", () => {
+    scrollFunction("front");
+  })
+  //Front button
+  $('.my-works-btn').on("click", () => {
+    scrollFunction("front");
+  })
+
+  //aboutBox scroll event
+  let aboutEle = $('.about');
+  let aboutOffsetTop = aboutEle.offset().top;
+  let aboutOffsetBottom = aboutOffsetTop + aboutEle.outerHeight();
+
+  $(window).scroll(() => {
+    let scrollOffset = $(this).scrollTop() + $(window).height();
+
+    if (scrollOffset >= aboutOffsetTop && scrollOffset <= aboutOffsetBottom) {
+      let boxEle = $('.about .box');
+      !(boxEle.hasClass("box-active")) && boxEle.addClass("box-active");
+    }
+  })
 });

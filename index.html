@@ -13,6 +13,7 @@
 
   <!-- Script -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
   <script src="index.js"></script>
 
   <!-- FontAwsome -->
@@ -24,37 +25,37 @@
   <div class="nav">
     <div class="nav-content">
       <div class="brand">
-        <a href="/">
+        <a href="#">
           <h1>KDUY</h1>
         </a>
       </div>
       <div class="nav-bar">
         <div class="nav-bar-container">
-          <a href="">
+          <a id="frontScroll" class="scroll-event" href="#">
             <div class="item">
               <p>HOME</p>
             </div>
           </a>
           <div class="line"></div>
-          <a href="">
+          <a id="aboutScroll" class="scroll-event" href="#">
             <div class="item">
               <p>ABOUT ME</p>
             </div>
           </a>
           <div class="line"></div>
-          <a href="">
+          <a id="serviceScroll" class="scroll-event" href="#">
             <div class="item">
               <p>SERVICES</p>
             </div>
           </a>
           <div class="line"></div>
-          <a href="">
+          <a id="worksScroll" class="scroll-event" href="#">
             <div class="item">
               <p>MY WORKS</p>
             </div>
           </a>
           <div class="line"></div>
-          <a href="">
+          <a id="contactScroll" class="scroll-event" href="#">
             <div class="item">
               <p>CONTACT</p>
             </div>
@@ -71,28 +72,26 @@
     </div>
   </div>
   <div class="front">
-    <!-- <div class="video-container">
-      <video src="./media/videos/Aerial Shot Of City.mp4"></video>
-      <video src="./media/videos/Pexels Videos 1395943.mp4"></video>
-      <video src="./media/videos/video.mp4"></video>
-    </div> -->
-    <h1>I'm <span>Khuong Duy</span></h1>
-    <h2>Front-end Developer</h2>
-    <h2>Web & UI/UX Designer</h2>
-    <button>MY WORKS</button>
+    <div class="front-content">
+      <h1>I'm <span>Khuong Duy</span></h1>
+      <h2>Front-end Developer</h2>
+      <h2>Web & UI/UX Designer</h2>
+      <button class="my-works-btn">MY WORKS</button>
+    </div>
   </div>
   <div class="about">
     <div class="background">
       <div class="diagonal">
-        <svg width="1440" height="1019" viewBox="0 0 1440 1019" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 284.5L1440 0V682.5L0 1019L0 284.5Z" fill="#BBE1FA" fill-opacity="0.5" />
+        <svg viewBox="0 0 1440 774" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 216.097L1440 0V518.405L0 774L0 216.097Z" fill="#BBE1FA" fill-opacity="0.5" />
         </svg>
       </div>
       <div class="box">
-        <svg width="411" height="412" viewBox="0 0 411 412" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.787109" y="138.702" width="302.259" height="307.42" transform="rotate(-27.2865 0.787109 138.702)"
+        <svg width="569" height="572" viewBox="0 0 569 572" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.715088" y="192.707" width="418.971" height="426.125" transform="rotate(-27.2865 0.715088 192.707)"
             fill="#324047" />
         </svg>
+
       </div>
     </div>
     <div class="about-me">
@@ -195,6 +194,54 @@
       </div>
     </div>
   </div>
+  <div class="personal-selling-points">
+    <div class="selling-points">
+      <div class="point">
+        <div class="circle">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#3282B8" />
+            <path
+              d="M70 25H30C28.6739 25 27.4021 25.5268 26.4645 26.4645C25.5268 27.4021 25 28.6739 25 30V60C25 61.3261 25.5268 62.5979 26.4645 63.5355C27.4021 64.4732 28.6739 65 30 65H45V70H37.5V75H62.5V70H55V65H70C71.3261 65 72.5979 64.4732 73.5355 63.5355C74.4732 62.5979 75 61.3261 75 60V30C75 28.6739 74.4732 27.4021 73.5355 26.4645C72.5979 25.5268 71.3261 25 70 25ZM70 60H30V30H70V60Z"
+              fill="white" />
+          </svg>
+        </div>
+        <h2>Ac morbi dignissim.</h2>
+      </div>
+      <div class="point">
+        <div class="circle">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#3282B8" />
+            <path
+              d="M70 25H30C28.6739 25 27.4021 25.5268 26.4645 26.4645C25.5268 27.4021 25 28.6739 25 30V60C25 61.3261 25.5268 62.5979 26.4645 63.5355C27.4021 64.4732 28.6739 65 30 65H45V70H37.5V75H62.5V70H55V65H70C71.3261 65 72.5979 64.4732 73.5355 63.5355C74.4732 62.5979 75 61.3261 75 60V30C75 28.6739 74.4732 27.4021 73.5355 26.4645C72.5979 25.5268 71.3261 25 70 25ZM70 60H30V30H70V60Z"
+              fill="white" />
+          </svg>
+        </div>
+        <h2>Ac morbi dignissim.</h2>
+      </div>
+      <div class="point">
+        <div class="circle">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#3282B8" />
+            <path
+              d="M70 25H30C28.6739 25 27.4021 25.5268 26.4645 26.4645C25.5268 27.4021 25 28.6739 25 30V60C25 61.3261 25.5268 62.5979 26.4645 63.5355C27.4021 64.4732 28.6739 65 30 65H45V70H37.5V75H62.5V70H55V65H70C71.3261 65 72.5979 64.4732 73.5355 63.5355C74.4732 62.5979 75 61.3261 75 60V30C75 28.6739 74.4732 27.4021 73.5355 26.4645C72.5979 25.5268 71.3261 25 70 25ZM70 60H30V30H70V60Z"
+              fill="white" />
+          </svg>
+        </div>
+        <h2>Ac morbi dignissim.</h2>
+      </div>
+      <div class="point">
+        <div class="circle">
+          <svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="50" fill="#3282B8" />
+            <path
+              d="M70 25H30C28.6739 25 27.4021 25.5268 26.4645 26.4645C25.5268 27.4021 25 28.6739 25 30V60C25 61.3261 25.5268 62.5979 26.4645 63.5355C27.4021 64.4732 28.6739 65 30 65H45V70H37.5V75H62.5V70H55V65H70C71.3261 65 72.5979 64.4732 73.5355 63.5355C74.4732 62.5979 75 61.3261 75 60V30C75 28.6739 74.4732 27.4021 73.5355 26.4645C72.5979 25.5268 71.3261 25 70 25ZM70 60H30V30H70V60Z"
+              fill="white" />
+          </svg>
+        </div>
+        <h2>Ac morbi dignissim.</h2>
+      </div>
+    </div>
+  </div>
   <div class="service">
     <div class="service-nav-full">
       <div class="arrow-left to-frontend-short">
@@ -213,7 +260,7 @@
       </div>
     </div>
     <div class="svg">
-      <svg width="1440" height="650" viewBox="0 0 1440 650" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1440 650" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0L1440 159V650L0 473.5V0Z" fill="#3282B8" fill-opacity="0.5" />
       </svg>
     </div>
@@ -222,12 +269,12 @@
     </div>
     <div class="service-nav">
       <div class="item">
-        <p id="to-frontend-full-nav" class="to-frontend-full appear">FRONT-END DEVELOPMENT</p>
+        <p id="to-frontend-full-nav" class="to-frontend-full service-appear">FRONT-END DEVELOPMENT</p>
         <p id="to-frontend-short-nav" class="to-frontend-short">FRONT-END DEVELOPMENT</p>
       </div>
       <div class="line"></div>
       <div class="item">
-        <p id="to-webdesign-full-nav" class="to-webdesign-full appear">WEB & UI/UX DESIGN</p>
+        <p id="to-webdesign-full-nav" class="to-webdesign-full service-appear">WEB & UI/UX DESIGN</p>
         <p id="to-webdesign-short-nav" class="to-webdesign-short">WEB & UI/UX DESIGN</p>
       </div>
     </div>
@@ -249,7 +296,7 @@
           magna
           aliqua.</p>
       </div>
-      <div class="web-full dissapear">
+      <div class="web-full service-disappear">
         <h1>FRONT-END DEVELOPMENT</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna
@@ -303,7 +350,7 @@
           </div>
         </div>
       </div>
-      <div class="design-full dissapear">
+      <div class="design-full service-disappear">
         <h1>WEB & UI/UX DESIGN</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
           magna
@@ -352,13 +399,13 @@
   <div class="works">
     <div class="svg">
       <div class="square">
-        <svg width="385" height="524" viewBox="0 0 385 524" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect width="385" height="524" fill="#324047" />
+        <svg width="500" height="600" viewBox="0 0 500 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="500" height="600" fill="#324047" />
         </svg>
       </div>
       <div class="diagonal">
-        <svg width="1440" height="1287" viewBox="0 0 1440 1287" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 497.5L1440 0.5V693.5L0 1287V497.5Z" fill="#0F4C75" fill-opacity="0.5" />
+        <svg viewBox="0 0 1440 973" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 375.889L1440 0V524.127L0 973V375.889Z" fill="#0F4C75" fill-opacity="0.5" />
         </svg>
       </div>
     </div>
@@ -444,26 +491,26 @@
     </div>
   </div>
   <div class="calling">
-    <div class="svg">
-      <svg width="282" height="282" viewBox="0 0 282 282" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0.152344" y="153.573" width="200" height="200" transform="rotate(-50.1627 0.152344 153.573)"
-          fill="#324047" />
-      </svg>
-    </div>
     <div class="border">
+      <div class="svg">
+        <svg width="282" height="282" viewBox="0 0 282 282" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.152344" y="153.573" width="200" height="200" transform="rotate(-50.1627 0.152344 153.573)"
+            fill="#324047" />
+        </svg>
+      </div>
       <h1>LET'S STAND OUT WITH US!</h1>
     </div>
   </div>
   <div class="footer">
+    <div class="svg">
+      <svg viewBox="0 0 741 338" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0L741 239.5V337.5H472.5L0 191.5V0Z" fill="#0F4C75" fill-opacity="0.3" />
+      </svg>
+    </div>
     <div class="footer-container">
-      <div class="svg">
-        <svg width="741" height="338" viewBox="0 0 741 338" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 0L741 239.5V337.5H472.5L0 191.5V0Z" fill="#0F4C75" fill-opacity="0.3" />
-        </svg>
-      </div>
       <div class="footer-content">
         <div class="brand">
-          <a href="/">
+          <a href="#">
             <h1>KDUY</h1>
           </a>
         </div>
@@ -476,10 +523,10 @@
           <h1>CONTACT</h1>
         </div>
         <div class="contact-content">
-          <a href=""><i class="far fa-envelope"></i></a>
-          <a href=""><i class="fab fa-github"></i></a>
-          <a href=""><i class="fab fa-facebook"></i></a>
-          <a href=""><i class="fab fa-twitter"></i></a>
+          <a href="mailto:nnkhuongduy@gmail.com"><i class="far fa-envelope"><span>nnkhuongduy@gmail.com</span></i></a>
+          <a href="https://github.com/nnkhuongduy/"><i class="fab fa-github"><span>/nnkhuongduy</span></i></a>
+          <a href="https://www.facebook.com/nnkhuongduy"><i class="fab fa-facebook"><span>/nnkhuongduy</span></i></a>
+          <a href="https://twitter.com/KhuongD77201105"><i class="fab fa-twitter"><span>@KhuongD77201105</span></i></a>
         </div>
       </div>
     </div>
