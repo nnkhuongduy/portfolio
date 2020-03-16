@@ -312,20 +312,61 @@ $(document).ready(function () {
   })
   //Front button
   $('.my-works-btn').on("click", () => {
-    scrollFunction("front");
+    scrollFunction("works");
   })
 
-  //aboutBox scroll event
+  //SVG Scroll event
+  //aboutSVG
   let aboutEle = $('.about');
   let aboutOffsetTop = aboutEle.offset().top;
-  let aboutOffsetBottom = aboutOffsetTop + aboutEle.outerHeight();
+  let aboutOffsetBottom = aboutOffsetTop + aboutEle.innerHeight();
 
+  //serviceSVG
+  let serviceEle = $('.service .content');
+  let serviceOffsetTop = serviceEle.offset().top;
+  let serviceOffsetBottom = serviceOffsetTop + serviceEle.innerHeight();
+
+  //worksSVG
+  let worksEle = $('.works .works-container');
+  let worksOffsetTop = worksEle.offset().top;
+  let worksOffsetBottom = worksOffsetTop + worksEle.outerHeight();
+
+  //callingSVG
+  let callingEle = $('.calling');
+  let callingOffsetTop = callingEle.offset().top;
+  let callingOffsetBottom = callingOffsetTop + callingEle.innerHeight();
+
+  //Scroll effect
   $(window).scroll(() => {
-    let scrollOffset = $(this).scrollTop() + $(window).height();
+    let scrollOffset = $(this).scrollTop() + ($(window).height() / 2);
 
+    //About scroll handle
     if (scrollOffset >= aboutOffsetTop && scrollOffset <= aboutOffsetBottom) {
       let boxEle = $('.about .box');
+      let hideEle = $('.about .background .diagonal .hide-element');
       !(boxEle.hasClass("box-active")) && boxEle.addClass("box-active");
+      !(hideEle.hasClass("element-unhide-left")) && hideEle.addClass("element-unhide-left");
     }
+
+    //Service scroll handle
+    if (scrollOffset >= serviceOffsetTop && scrollOffset <= serviceOffsetBottom) {
+      let hideEle = $('.service .hide-element');
+      !(hideEle.hasClass("element-unhide-right")) && hideEle.addClass("element-unhide-right");
+    }
+
+    //Works scroll handle
+    if (scrollOffset >= worksOffsetTop && scrollOffset <= worksOffsetBottom) {
+      let hideEle = $('.works .hide-element');
+      !(hideEle.hasClass("element-unhide-left")) && hideEle.addClass("element-unhide-left");
+    }
+
+    //Calling, Footer scroll handle
+    if (scrollOffset >= callingOffsetTop && scrollOffset <= callingOffsetBottom) {
+      let boxEle = $('.calling .svg');
+      !(boxEle.hasClass("box-active")) && boxEle.addClass("box-active");
+      let hideEle = $('.footer .hide-element');
+      !(hideEle.hasClass("element-unhide-right")) && hideEle.addClass("element-unhide-right");
+    }
+
   })
 });
